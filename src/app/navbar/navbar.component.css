@@ -1,3 +1,10 @@
 .bg-yellow {
   background-color: #fac001;
 }
+
+.custom-margin {
+  margin: 1% 5%;
+}
+.spaced-nav-link {
+  margin-right: 40px;
+}
