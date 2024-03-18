@@ -1,13 +1,13 @@
 body {
   font-family: sans-serif;
-  background-image: url('/assets/background.jpg');
 
 }
 
 .container {
-  max-width: 50%;
+  max-width: 30%;
   margin: 10% auto;
 }
+
 
 .mt-5 {
   margin-top: 2rem;
@@ -28,7 +28,9 @@ body {
 .col-sm-6, .col-md-4 {
   flex: 1 0 50%;
 }
-
+.col-md-6{
+  flex: 1;
+}
 .align-items-center {
   align-items: center;
 }
@@ -91,3 +93,15 @@ body {
   padding-top: 3%;
 }
 
+.btn-margin{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-link{
+  color: #9b8787;
+}
+
+ form{
+ margin-top: 2rem;
+ }

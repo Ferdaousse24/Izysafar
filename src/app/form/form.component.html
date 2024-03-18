@@ -1,7 +1,7 @@
-<div class="container border rounded">
+<div class="container border rounded my-form">
   <div class="row">
     <div class="col-12">
-      <ul class="nav nav-tabs  custom-padding" role="tablist">
+      <ul class="nav nav-tabs custom-padding" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" id="flights-tab" data-toggle="tab" href="#flights" role="tab"
              aria-controls="flights" aria-selected="true">Vols</a>
@@ -11,100 +11,98 @@
              aria-controls="flight-hotel" aria-selected="false">Vols + Hôtel</a>
         </li>
       </ul>
-      <div class="tab-content">
-        <div class="tab-pane fade show active" id="flights" role="tabpanel" aria-labelledby="flights-tab">
-          <form>
-            <div class="container mt-5">
-              <div class="row justify-content-between mb-3 align-items-center">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="from" class="form-label">Depuis :</label>
-                    <input type="text" class="form-control" id="from" placeholder="Ville de départ">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="to" class="form-label">Vers :</label>
-                    <input type="text" class="form-control" id="to" placeholder="Ville de destination">
-                  </div>
-                </div>
-              </div>
-              <div class="row justify-content-between align-items-center mb-3">
-                <div class="col-md-6">
-                  <div class="d-flex align-items-center">
-                    <div class="form-check me-3">
-                      <input class="form-check-input" type="checkbox" id="one-way" value="one-way" checked>
-                      <label class="form-check-label" for="one-way">Aller simple</label>
-                    </div>
-                    <div class="form-check me-3">
-                      <input class="form-check-input" type="checkbox" id="round-trip" value="round-trip">
-                      <label class="form-check-label" for="round-trip">Aller-retour</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 d-flex justify-content-end">
-                  <button type="submit" class="btn btn-custom">Rechercher</button>
-                </div>
-              </div>
-              <div class="row justify-content-between align-items-center mb-3">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="departure-date" class="form-label">Départ :</label>
-                    <input type="date" class="form-control" id="departure-date">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="return-date" class="form-label">Retour :</label>
-                    <input type="date" class="form-control" id="return-date">
-                  </div>
-                </div>
-              </div>
-              <div class="row justify-content-between align-items-center">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="passengers" class="form-label">Passagers :</label>
-                    <div class="row">
-                      <div class="col d-flex align-items-center">
-                        <label class="input-group-text border-0 bg-transparent">Adultes</label>
-                        <select class="form-select" id="adultes">
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                        </select>
-                      </div>
-                      <div class="col d-flex align-items-center">
-                        <label class="input-group-text border-0 bg-transparent">Enfants 2-12</label>
-                        <select class="form-select" id="enfants">
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                        </select>
-                      </div>
-                      <div class="col d-flex align-items-center">
-                        <label class="input-group-text border-0 bg-transparent">Bébés &lt; 2</label>
-                        <select class="form-select form-select-sm" id="bebes">
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
+    </div>
+  </div>
+
+  <!-- formulaire d'information de passagers -->
+  <form action="https://aqtion1.airquest.com/aq4/jsp/?j_username=agencesvoyage.fr&j_password=agencesvoyage.fr&departure0=LYS&destination0=CMN&departureDate0=02.05.2024&departure1=CMN&destination1=LYS&departureDate1=08.05.2024&paxTypeId0=ADT&paxTypeCount0=1&paxTypeId1=CHD&paxTypeCount1=0&paxTypeId2=INF&paxTypeCount2=0&start=true&toleranceType0=C&tolerance0=3&toleranceType1=C&tolerance1=3" method="get">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <div class="form-group">
+          <input type="text" class="form-control" id="from" placeholder="Ville de départ" value="LYS">
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="form-group">
+          <input type="text" class="form-control" id="to" placeholder="Ville de destination" value="CMN">
         </div>
       </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <div class="form-check me-3">
+          <input class="form-check-input" type="radio" id="one-way" name="trip-type" value="one-way" checked>
+          <label class="form-check-label" for="one-way">Aller simple</label>
+        </div>
+        <div class="form-check me-3">
+          <input class="form-check-input" type="radio" id="round-trip" name="trip-type" value="round-trip">
+          <label class="form-check-label" for="round-trip">Aller-retour</label>
+        </div>
+      </div>
+
+      <!-- Ajout de la section des dates de départ et de retour -->
+      <div class="row justify-content-between align-items-center mb-3">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="date" class="form-control" id="departure-date">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="date" class="form-control" id="return-date">
+          </div>
+        </div>
+      </div>
+
+      <!-- Passagers -->
+      <div class="row justify-content-between align-items-center">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="passengers" class="form-label">Passagers :</label>
+            <div class="row">
+              <div class="col d-flex align-items-center">
+                <label class="input-group-text border-0 bg-transparent">Adultes</label>
+                <select class="form-select" id="adultes">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                </select>
+              </div>
+              <div class="col d-flex align-items-center">
+                <label class="input-group-text border-0 bg-transparent">Enfants 2-12</label>
+                <select class="form-select" id="enfants">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="col d-flex align-items-center">
+                <label class="input-group-text border-0 bg-transparent">Bébés &lt; 2</label>
+                <select class="form-select form-select-sm" id="bebes">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton rechercher -->
+      <div class="col-md-6 d-flex justify-content-end btn-margin">
+        <button type="submit" class="btn btn-custom" formtarget="_blank"> Rechercher</button>
+      </div>
+    </div>
+  </form>
+
+
 </div>
